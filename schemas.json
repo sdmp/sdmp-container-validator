@@ -1,0 +1,153 @@
+{
+  "container": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "[SDMP 0.13](http://sdmp.io/) Core Container Schema",
+    "description": "Schema for the core SDMP [container](http://sdmp.io/spec/0.12/core/container/).",
+    "type": "object",
+    "properties": {
+      "sdmp": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string",
+            "pattern": "^0\\.13$"
+          },
+          "schemas": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": [ "version", "schemas" ],
+        "additionalProperties": false
+      }
+    },
+    "required": [ "sdmp" ]
+  },
+
+  "identity": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "[SDMP 0.13](http://sdmp.io/) Identity Schema",
+    "description": "Schema for an SDMP [identity](http://sdmp.io/spec/0.13/core/identity) container.",
+    "type": "object",
+    "properties": {
+      "type": { "enum": [ "user", "node" ] },
+      "expires": { "type": "string" },
+      "key": {
+        "type": "string",
+        "media": {
+          "binaryEncoding": "base64url"
+        }
+      },
+      "fingerprint": {
+        "type": "string",
+        "media": {
+          "binaryEncoding": "base64url"
+        }
+      }
+    },
+    "required": [ "type", "expires", "key", "fingerprint" ]
+  },
+
+  "encrypted": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "[SDMP 0.13](http://sdmp.io/) Encrypted Schema",
+    "description": "Schema for an SDMP [encrypted](http://sdmp.io/spec/0.13/core/encrypted) container.",
+    "type": "object",
+    "properties": {
+      "iv": {
+        "type": "string",
+        "media": {
+          "binaryEncoding": "base64url"
+        }
+      },
+      "payload": {
+        "type": "string",
+        "media": {
+          "binaryEncoding": "base64url"
+        }
+      },
+      "recipients": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "media": {
+            "binaryEncoding": "base64url"
+          }
+        }
+      }
+    },
+    "required": [ "iv, payload", "recipients" ]
+  },
+
+  "signature": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "[SDMP 0.13](http://sdmp.io/) Signature Schema",
+    "description": "Schema for an SDMP [signature](http://sdmp.io/spec/0.13/core/signature) container.",
+    "type": "object",
+    "properties": {
+      "identifier": {
+        "type": "string",
+        "media": {
+          "binaryEncoding": "base64url"
+        }
+      },
+      "payload": {
+        "type": "string",
+        "media": {
+          "binaryEncoding": "base64url"
+        }
+      },
+      "signatures": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "fingerprint": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64url"
+              }
+            },
+            "signature": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64url"
+              }
+            }
+          },
+          "required": [ "fingerprint", "signature" ]
+        }
+      }
+    }
+  },
+
+  "resource": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "[SDMP 0.13](http://sdmp.io/) Resource Schema",
+    "description": "Schema for an SDMP [resource](http://sdmp.io/spec/0.13/journal/resource) container.",
+    "type": "object",
+    "properties": {
+      "user": {
+        "type": "string",
+        "media": {
+          "binaryEncoding": "base64url"
+        }
+      },
+      "trust": {
+        "type": "string",
+        "media": {
+          "binaryEncoding": "base64url"
+        }
+      }
+    },
+    "required": [ "user", "trust" ]
+  },
+
+  "message": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "[SDMP 0.13](http://sdmp.io/) Message Schema",
+    "description": "Schema for an SDMP [message](http://sdmp.io/spec/0.13/schema/message) container.",
+    "type": "string"
+  }
+
+}
