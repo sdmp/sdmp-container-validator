@@ -1,6 +1,6 @@
 {
   "name": "sdmp-container-validator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Validate a JSON object as an SDMP container.",
   "main": "index.js",
   "scripts": {
