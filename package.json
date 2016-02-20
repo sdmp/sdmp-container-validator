@@ -1,0 +1,29 @@
+{
+  "name": "sdmp-container-validator",
+  "version": "0.0.2",
+  "description": "Validate a JSON object as an SDMP container.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdmp/sdmp-container-validator.git"
+  },
+  "keywords": [
+    "sdmp"
+  ],
+  "author": "saibotsivad",
+  "license": "VOL",
+  "bugs": {
+    "url": "https://github.com/sdmp/sdmp-container-validator/issues"
+  },
+  "homepage": "https://github.com/sdmp/sdmp-container-validator#readme",
+  "devDependencies": {
+    "tape": "4.4.0"
+  },
+  "dependencies": {
+    "is-my-json-valid": "^2.13.0",
+    "promise": "^7.1.1"
+  }
+}
