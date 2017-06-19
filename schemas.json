@@ -33,16 +33,10 @@
       "type": { "enum": [ "user", "node" ] },
       "expires": { "type": "string" },
       "key": {
-        "type": "string",
-        "media": {
-          "binaryEncoding": "base64url"
-        }
+        "type": "string"
       },
       "fingerprint": {
-        "type": "string",
-        "media": {
-          "binaryEncoding": "base64url"
-        }
+        "type": "string"
       }
     },
     "required": [ "type", "expires", "key", "fingerprint" ]
@@ -55,24 +49,15 @@
     "type": "object",
     "properties": {
       "iv": {
-        "type": "string",
-        "media": {
-          "binaryEncoding": "base64url"
-        }
+        "type": "string"
       },
       "payload": {
-        "type": "string",
-        "media": {
-          "binaryEncoding": "base64url"
-        }
+        "type": "string"
       },
       "recipients": {
         "type": "array",
         "items": {
-          "type": "string",
-          "media": {
-            "binaryEncoding": "base64url"
-          }
+          "type": "string"
         }
       }
     },
@@ -86,16 +71,10 @@
     "type": "object",
     "properties": {
       "identifier": {
-        "type": "string",
-        "media": {
-          "binaryEncoding": "base64url"
-        }
+        "type": "string"
       },
       "payload": {
-        "type": "string",
-        "media": {
-          "binaryEncoding": "base64url"
-        }
+        "type": "string"
       },
       "signatures": {
         "type": "array",
@@ -103,16 +82,10 @@
           "type": "object",
           "properties": {
             "fingerprint": {
-              "type": "string",
-              "media": {
-                "binaryEncoding": "base64url"
-              }
+              "type": "string"
             },
             "signature": {
-              "type": "string",
-              "media": {
-                "binaryEncoding": "base64url"
-              }
+              "type": "string"
             }
           },
           "required": [ "fingerprint", "signature" ]
@@ -128,16 +101,10 @@
     "type": "object",
     "properties": {
       "user": {
-        "type": "string",
-        "media": {
-          "binaryEncoding": "base64url"
-        }
+        "type": "string"
       },
       "trust": {
-        "type": "string",
-        "media": {
-          "binaryEncoding": "base64url"
-        }
+        "type": "string"
       }
     },
     "required": [ "user", "trust" ]
